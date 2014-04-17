@@ -17,6 +17,8 @@
 
 <body>
 
+    <notifications class="hidden">There are actionable items!</notifications>
+
     <gtd-notes class="hidden">
         <ul>
             <li rv-each-task="inbox">
@@ -40,8 +42,6 @@
         </ul>
     </gtd-notes>
 
-    <div class="notification">There are actionable items!</div>
-
     <div id="wrapper">
         <div id="contentdiv">
             {%content%}
@@ -53,6 +53,7 @@
     <script src="file://{%support%}/lib/rivets.min.js"></script>
     <script src="file://{%support%}/lib/hljs/highlight.min.js"></script>
     <script src="file://{%support%}/plugins/gtd.js"></script>
+    <script src="file://{%support%}/plugins/notifications.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
         (function($){
