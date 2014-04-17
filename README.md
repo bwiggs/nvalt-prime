@@ -11,6 +11,8 @@ A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 - code highlighting
 - User Story detection (As a user, I expect ...)
 
+![screenshot](https://cloud.githubusercontent.com/assets/7358/2734135/1856cee4-c650-11e3-85ca-198179647c8e.png "Screenshot")
+
 ### Requirements
 
 [nvalt](http://brettterpstra.com/projects/nvalt/) - nvALT is a fork of the original Notational Velocity with some additional features and some interface modifications.
