@@ -19,14 +19,17 @@ A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 
 In a terminal:
 
-    cd ~/Library/Application Support/nvALT/
-    git clone git@github.com:bawigga/nvalt-prime.git
+    cd ~/Library/Application\ Support/
+    rm -rfi nvALT/
+    git clone git@github.com:bawigga/nvalt-prime.git nvALT
 
-No need to restart nvALT. The changes will be picked up the next time you preview a new note.
+No need to restart nvALT. The changes will be picked up the next time you switch notes.
 
 #### Reverting
 
 You can always restore the default just by deleting the files in `~/Library/Application Support/nvALT/`.
+
+	rm -rf ~/Library/Application\ Support/nvALT
 
 ## Usage
 
