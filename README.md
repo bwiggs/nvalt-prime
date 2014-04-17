@@ -2,10 +2,11 @@
 
 A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 
-## Features
+### Features
 
 - Github theme
 - Github markdown support
+- Font Awesome icons [fa-github]
 - simple checkbox support ([] and [/])
 - User Story detection (As a user, I expect ...)
 
@@ -18,7 +19,7 @@ In a terminal:
 
 No need to restart nvALT. The changes will be picked up the next time you preview a new note.
 
-### Reverting
+#### Reverting
 
 You can always restore the default just by deleting the files in `~/Library/Application Support/nvALT/`.
 
@@ -30,6 +31,10 @@ There are two types of checkboxes you can use:
 
     [] - unchecked
     [/] - checked
+
+### Font Awesome Icons
+
+    [fa-github]
 
 ### Github Markdown Theme
 

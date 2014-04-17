@@ -64,35 +64,42 @@
     }
   });
 
-  (function githubMarkdown() {
-    var body = document.body;
+    (function githubMarkdown() {
+        var body = document.body;
 
-    // handles strikethrough markdown support
-    body.innerHTML = body.innerHTML.replace(/~~(.+)~~/gi, '<del>$1</del>')
+        // handles strikethrough markdown support
+        body.innerHTML = body.innerHTML.replace(/~~(.+)~~/gi, '<del>$1</del>')
 
-    // handle checkboxes for tasks
-    body.innerHTML = body.innerHTML.replace(/\[\]/gi,  '<span class="fa fa-square-o"></span>')
-    body.innerHTML = body.innerHTML.replace(/\[\/\]/gi,  '<span class="fa fa-check-square done"></span>')
+        // handle checkboxes for tasks
+        body.innerHTML = body.innerHTML.replace(/\[\]/gi,  '<span class="fa fa-square-o"></span>')
+        body.innerHTML = body.innerHTML.replace(/\[\/\]/gi,  '<span class="fa fa-check-square done"></span>')
 
 
-    // auto link jira tickets
-    // body.innerHTML = body.innerHTML.replace(/([a-zA-Z]{2,})[\-–](\d+)/gi,  '<code><a href="https://sportslabs.atlassian.net/browse/$1-$2">$1-$2</a></code>');
-  })();
+        // auto link jira tickets
+        // body.innerHTML = body.innerHTML.replace(/([a-zA-Z]{2,})[\-–](\d+)/gi,  '<code><a href="https://sportslabs.atlassian.net/browse/$1-$2">$1-$2</a></code>');
+    })();
 
 	(function userStoryMagic() {
-    var match,
-        userStoryPattern = new RegExp(/As a ([a-zA-Z0-9\ ]+), I expect ([a-zA-Z0-9\ ]+)\./g);
+        var match,
+            userStoryPattern = new RegExp(/As a ([a-zA-Z0-9\ ]+), I expect ([a-zA-Z0-9\ ]+)\./g);
 
-    window.stories = [];
+        window.stories = [];
 
-		while(match = userStoryPattern.exec(document.body.innerHTML)) {
-      stories.push({
-        story: match[0],
-        user: match[1],
-        feature: match[2]
-      })
-    }
+    	while(match = userStoryPattern.exec(document.body.innerHTML)) {
+          stories.push({
+            story: match[0],
+            user: match[1],
+            feature: match[2]
+          })
+        }
 	})();
+
+    (function fontAwesomify() {
+        var body = document.body;
+
+        // handles strikethrough markdown support
+        body.innerHTML = body.innerHTML.replace(/\[fa-([\w]+)\]/gi, '<i class="fa fa-$1"></i>')
+    })();
 
 })(jQuery);
   </script>
