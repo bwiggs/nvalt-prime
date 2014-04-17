@@ -7,6 +7,10 @@ body {
   background-color: white;
 }
 
+.hidden {
+    display: none;
+}
+
 .notification {
 
     display: none;

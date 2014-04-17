@@ -1,4 +1,5 @@
 (function gtd(_, $, rivets) {
+
     var body = document.body;
 
     // handle checkboxes for tasks
@@ -13,20 +14,26 @@
         // inbox
         .replace(/\[\](.+)\n/gi,  '<gtd class="gtd-inbox"><span class="fa fa-square-o"></span> $1</gtd>')
 
-    tasks = [];
+    if(GTD_NOTES) {
 
-    _.each($('gtd'), function(item) {
-        tasks.push({
-            name: 'sacdas',
-            state: item.className.split('-')[1]
-        });
-    })
+        $('gtd-notes').show();
 
-    rivets.bind($('gtd-notes'), {
-      action: _.where(tasks, {state: 'action'}),
-      done: _.where(tasks, {state: 'done'}),
-      inbox: _.where(tasks, {state: 'inbox'}),
-      later: _.where(tasks, {state: 'later'}),
-      tasks: tasks
-    })
+        tasks = [];
+
+        _.each($('gtd'), function(item) {
+            tasks.push({
+                name: 'sacdas',
+                state: item.className.split('-')[1]
+            });
+        })
+
+        rivets.bind($('gtd-notes'), {
+          action: _.where(tasks, {state: 'action'}),
+          done: _.where(tasks, {state: 'done'}),
+          inbox: _.where(tasks, {state: 'inbox'}),
+          later: _.where(tasks, {state: 'later'}),
+          tasks: tasks
+        })
+    }
+
 })(_, jQuery, rivets);
