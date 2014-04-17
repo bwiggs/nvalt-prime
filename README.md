@@ -6,13 +6,37 @@ A smart nvAlt Preview Theme.
 
 - Github theme
 - Github markdown support
-- simple checkbox support [] / [/]
+- simple checkbox support ([] and [/])
 - User Story detection (As a user, I expect ...)
 
 ## Installation
 
-First, back up any custom files you've created previously. You can always restore the default just by deleting the `custom.css` and `template.html` files from `~/Library/Application Support/nvALT/`.
+In a terminal:
 
-Copy the files in the zip folder to `~/Library/Application Support/nvALT/`. If the "nvALT" folder doesn't exist, create it or simply drag the folder you unzipped into **[User Home]→Library→Application Support**.
+    cd ~/Application Support/nvALT/
+    git clone git@github.com:bawigga/nvalt-prime.git
 
-nvALT will automatically pick up this new theme even if it's already running. After switching notes you should see the change.
+No need to restart nvALT. The changes will be picked up the next time you preview a new note.
+
+### Reverting
+
+You can always restore the default just by deleting the files in `~/Library/Application Support/nvALT/`.
+
+## Usage
+
+### Checkboxes
+
+There are two types of checkboxes you can use:
+
+    [] - unchecked
+    [/] - checked
+
+### Github Markdown Theme
+
+    strikethrough: wrap text with ~~
+    
+### User Story Detection
+
+By writing your user stories in a particular format, nvALT will parse and display them.
+
+    "As a user, I expect" to be able to do something.
