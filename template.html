@@ -74,19 +74,30 @@
             }
         });
 
-        (function githubMarkdown() {
-            var body = document.body;
+        var body = document.body;
 
+        (function githubMarkdown() {
             // handles strikethrough markdown support
             body.innerHTML = body.innerHTML.replace(/~~(.+)~~/gi, '<del>$1</del>')
+        })();
 
-            // handle checkboxes for tasks
-            body.innerHTML = body.innerHTML.replace(/\[\]/gi,  '<span class="fa fa-square-o"></span>')
-            body.innerHTML = body.innerHTML.replace(/\[\/\]/gi,  '<span class="fa fa-check-square done"></span>')
-
-
+        (function jira() {
             // auto link jira tickets
             // body.innerHTML = body.innerHTML.replace(/([a-zA-Z]{2,})[\-–](\d+)/gi,  '<code><a href="https://sportslabs.atlassian.net/browse/$1-$2">$1-$2</a></code>');
+        })();
+
+        (function gtd() {
+            // handle checkboxes for tasks
+            body.innerHTML = body.innerHTML
+                // action
+                .replace(/\[\](.+)\s@action/gi, '<gtd class="gtd-action"><span class="fa fa-square-o"></span> $1</gtd>')
+                // later
+                .replace(/\[\](.+)\s@later/gi, '<gtd class="gtd-later"><span class="fa fa-calendar"></span> $1</gtd>')
+                // done
+                .replace(/\[\](.+)\s@done/gi, '<gtd class="gtd-done"><span class="fa fa-check-square"></span> <del>$1</del></gtd>')
+                .replace(/\[\/\](.+)\n/gi, '<gtd class="gtd-done"><span class="fa fa-check-square"></span> <del>$1</del></gtd>')
+                // inbox
+                .replace(/\[\](.+)\n/gi,  '<gtd><span class="fa fa-square-o"></span> $1</gtd>')
         })();
 
         (function userStoryMagic() {

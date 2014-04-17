@@ -301,6 +301,17 @@ li > p {
 	margin: 0;
 }
 
-.done {
-	color: #739e73;
+gtd {
+    display: block;
+}
+gtd.gtd-done {
+    color: #aaa;
+}
+
+gtd.gtd-action {
+    color: #a90329;
+}
+
+gtd fa.gtd-done {
+    color: #739e73;
 }
