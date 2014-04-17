@@ -7,11 +7,13 @@
 
   <title>{%title%}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="file://{%support%}/lib/font-awesome/font-awesome.css">
+  <link rel="stylesheet" title="Github" href="file://{%support%}/lib/hljs/styles/github.css">
+  <!-- <link rel="stylesheet" title="Tomorrow" href="file://{%support%}/lib/hljs/styles/tomorrow.css"> -->
   <style type="text/css">
     {%style%}
   </style>
-  <link rel="stylesheet" href="file://{%support%}/lib/font-awesome/font-awesome.css">
+
 </head>
 
 <body>
@@ -29,81 +31,87 @@
 
 <script src="file://{%support%}/lib/jquery.min.js"></script>
 <script src="file://{%support%}/lib/underscore-min.js"></script>
+<script src="file://{%support%}/lib/hljs/highlight.min.js"></script>
 <script>
-(function($){
-  // widont
-  $('h1,h2,h3,h4').each(function(){
-    $(this).html($(this).text().replace(/([^\\s])\\s+([^\\s]{1,5})\\s*$/,"$1&nbsp;$2"));
-  });
-  // smooth scroll to anchors and footnotes
-  $('a[href^=#]').click(function(){
-    if( location.pathname.replace(/^\\/,'') === this.pathname.replace(/^\\/,'') && location.hostname === this.hostname) {
-      var $target = $(this.hash);
-      $target = $target.length ? $target : $('[id='+this.hash.slice(1)+']');
-      if($target.length){
-        var targetOffset = $target.offset().top;
-        $('#contentdiv').animate({ scrollTop: targetOffset - 40 }, 1000);
-        return false;
-      }
-    }
-  });
+    hljs.initHighlightingOnLoad();
+    (function($){
 
-  // back-to-top link fade in/out
-  $(window).scroll(function(){
-    if( $(window).scrollTop() > 150) {
-      if(!$('#backtotop').length) {
-        $('h1.doctitle').append($('<a href="javascript:void()" id="backtotop" />').text('Back to top').css({'float':'right','display':'none'}).click(function(){
-          $('html,body').animate({scrollTop:0},500);
-        }));
-        $('#backtotop').fadeIn(400);
-      }
-    } else {
-      $('#backtotop').fadeOut(400,function(){
-          $(this).remove();
+        // widont
+        $('h1,h2,h3,h4').each(function(){
+            $(this).html($(this).text().replace(/([^\\s])\\s+([^\\s]{1,5})\\s*$/,"$1&nbsp;$2"));
         });
-    }
-  });
 
-    (function githubMarkdown() {
-        var body = document.body;
+        // smooth scroll to anchors and footnotes
+        $('a[href^=#]').click(function(){
+            if( location.pathname.replace(/^\\/,'') === this.pathname.replace(/^\\/,'') && location.hostname === this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length ? $target : $('[id='+this.hash.slice(1)+']');
+            if($target.length){
+                var targetOffset = $target.offset().top;
+                $('#contentdiv').animate({ scrollTop: targetOffset - 40 }, 1000);
+                return false;
+            }
+            }
+        });
 
-        // handles strikethrough markdown support
-        body.innerHTML = body.innerHTML.replace(/~~(.+)~~/gi, '<del>$1</del>')
+        // back-to-top link fade in/out
+        $(window).scroll(function(){
+            if( $(window).scrollTop() > 150) {
+                if(!$('#backtotop').length) {
+                    $('h1.doctitle')
+                        .append($('<a href="javascript:void()" id="backtotop" />')
+                        .text('Back to top')
+                        .css({'float':'right','display':'none'})
+                        .click(function(){
+                            $('html,body').animate({scrollTop:0},500);
+                        }));
+                    $('#backtotop').fadeIn(400);
+                }
+            } else {
+                $('#backtotop').fadeOut(400,function(){
+                    $(this).remove();
+                });
+            }
+        });
 
-        // handle checkboxes for tasks
-        body.innerHTML = body.innerHTML.replace(/\[\]/gi,  '<span class="fa fa-square-o"></span>')
-        body.innerHTML = body.innerHTML.replace(/\[\/\]/gi,  '<span class="fa fa-check-square done"></span>')
+        (function githubMarkdown() {
+            var body = document.body;
+
+            // handles strikethrough markdown support
+            body.innerHTML = body.innerHTML.replace(/~~(.+)~~/gi, '<del>$1</del>')
+
+            // handle checkboxes for tasks
+            body.innerHTML = body.innerHTML.replace(/\[\]/gi,  '<span class="fa fa-square-o"></span>')
+            body.innerHTML = body.innerHTML.replace(/\[\/\]/gi,  '<span class="fa fa-check-square done"></span>')
 
 
-        // auto link jira tickets
-        // body.innerHTML = body.innerHTML.replace(/([a-zA-Z]{2,})[\-–](\d+)/gi,  '<code><a href="https://sportslabs.atlassian.net/browse/$1-$2">$1-$2</a></code>');
-    })();
+            // auto link jira tickets
+            // body.innerHTML = body.innerHTML.replace(/([a-zA-Z]{2,})[\-–](\d+)/gi,  '<code><a href="https://sportslabs.atlassian.net/browse/$1-$2">$1-$2</a></code>');
+        })();
 
-	(function userStoryMagic() {
-        var match,
-            userStoryPattern = new RegExp(/As a ([a-zA-Z0-9\ ]+), I expect ([a-zA-Z0-9\ ]+)\./g);
+        (function userStoryMagic() {
+            var match,
+                userStoryPattern = new RegExp(/As a ([a-zA-Z0-9\ ]+), I expect ([a-zA-Z0-9\ ]+)\./g);
 
-        window.stories = [];
+            window.stories = [];
 
-    	while(match = userStoryPattern.exec(document.body.innerHTML)) {
-          stories.push({
-            story: match[0],
-            user: match[1],
-            feature: match[2]
-          })
-        }
-	})();
+        	while(match = userStoryPattern.exec(document.body.innerHTML)) {
+              stories.push({
+                story: match[0],
+                user: match[1],
+                feature: match[2]
+              })
+            }
+        })();
 
-    (function fontAwesomify() {
-        var body = document.body;
+        (function fontAwesomify() {
+            var body = document.body;
 
-        // handles strikethrough markdown support
-        body.innerHTML = body.innerHTML.replace(/\[fa-([\w]+)\]/gi, '<i class="fa fa-$1"></i>')
-    })();
+            // handles strikethrough markdown support
+            body.innerHTML = body.innerHTML.replace(/\[fa-([\w]+)\]/gi, '<i class="fa fa-$1"></i>')
+        })();
 
-})(jQuery);
+    })(jQuery);
   </script>
-  <script src="file://{%support%}/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
