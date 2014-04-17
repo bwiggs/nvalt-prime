@@ -1,6 +1,6 @@
 # nvalt-prime
 
-A smart nvAlt Preview Theme.
+A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 
 ## Features
 
