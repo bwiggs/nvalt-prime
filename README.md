@@ -11,6 +11,10 @@ A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 - code highlighting
 - User Story detection (As a user, I expect ...)
 
+### Requirements
+
+[nvalt](http://brettterpstra.com/projects/nvalt/) - nvALT is a fork of the original Notational Velocity with some additional features and some interface modifications.
+
 ## Installation
 
 In a terminal:
@@ -32,6 +36,7 @@ There are two types of checkboxes you can use:
 
     [] - unchecked
     [/] - checked
+    [] - checked @done
 
 ### Code Highlighting
 
