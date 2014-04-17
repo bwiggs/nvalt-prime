@@ -18,6 +18,29 @@
 
 <body>
 
+    <gtd-notes>
+        <ul>
+            <li rv-each-task="inbox">
+                {task.state} - {task.name}
+            </li>
+        </ul>
+        <ul id="gtdTasks">
+            <li rv-each-task="action">
+                {task.state} - {task.name}
+            </li>
+        </ul>
+        <ul id="gtdTasks">
+            <li rv-each-task="later">
+                {task.state} - {task.name}
+            </li>
+        </ul>
+        <ul id="gtdTasks">
+            <li rv-each-task="done">
+                {task.state} - {task.name}
+            </li>
+        </ul>
+    </gtd-tasks>
+
     <div class="notification">There are actionable items!</div>
 
     <div id="wrapper">
@@ -81,20 +104,6 @@
             (function jira() {
                 // auto link jira tickets
                 // body.innerHTML = body.innerHTML.replace(/([a-zA-Z]{2,})[\-–](\d+)/gi,  '<code><a href="https://sportslabs.atlassian.net/browse/$1-$2">$1-$2</a></code>');
-            })();
-
-            (function gtd() {
-                // handle checkboxes for tasks
-                body.innerHTML = body.innerHTML
-                    // action
-                    .replace(/\[\](.+)\s@action/gi, '<gtd class="gtd-action"><span class="fa fa-square-o"></span> $1</gtd>')
-                    // later
-                    .replace(/\[\](.+)\s@later/gi, '<gtd class="gtd-later"><span class="fa fa-calendar"></span> $1</gtd>')
-                    // done
-                    .replace(/\[\](.+)\s@done/gi, '<gtd class="gtd-done"><span class="fa fa-check-square"></span> <del>$1</del></gtd>')
-                    .replace(/\[\/\](.+)\n/gi, '<gtd class="gtd-done"><span class="fa fa-check-square"></span> <del>$1</del></gtd>')
-                    // inbox
-                    .replace(/\[\](.+)\n/gi,  '<gtd><span class="fa fa-square-o"></span> $1</gtd>')
             })();
 
             (function userStoryMagic() {
