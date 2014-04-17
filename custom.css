@@ -8,6 +8,9 @@ body {
 }
 
 .notification {
+
+    display: none;
+
     background-color: #d6dde7;
     border-bottom: 2px solid #9cb4c5;
     color: #305d8c;
