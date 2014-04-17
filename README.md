@@ -13,7 +13,7 @@ A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 
 In a terminal:
 
-    cd ~/Application Support/nvALT/
+    cd ~/Library/Application Support/nvALT/
     git clone git@github.com:bawigga/nvalt-prime.git
 
 No need to restart nvALT. The changes will be picked up the next time you preview a new note.
