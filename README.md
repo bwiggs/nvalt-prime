@@ -8,6 +8,7 @@ A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 - Github markdown support
 - Font Awesome icons [fa-github]
 - simple checkbox support ([] and [/])
+- code highlighting
 - User Story detection (As a user, I expect ...)
 
 ## Installation
@@ -31,6 +32,13 @@ There are two types of checkboxes you can use:
 
     [] - unchecked
     [/] - checked
+
+### Code Highlighting
+
+    class SomeClass
+        def someMethod
+        end
+    end
 
 ### Font Awesome Icons
 
