@@ -31,6 +31,17 @@ You can always restore the default just by deleting the files in `~/Library/Appl
 
 	rm -rf ~/Library/Application\ Support/nvALT
 
+#### Hacking
+
+Just point `~/Library/Application Support/nvALT` to your local git repository.
+
+	cd [your project path]
+	git clone git@github.com:bawigga/nvalt-prime.git
+    rm -rfi ~/Library/Application\ Support/nvALT
+	ln -s /path/to/nvalt-prime/ ~/Library/Application\ Support/nvALT
+	
+Switching between notes will reload your changes.
+
 ## Usage
 
 ### Checkboxes
