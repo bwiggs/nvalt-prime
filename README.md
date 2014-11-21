@@ -23,7 +23,7 @@ In a terminal:
 
     cd ~/Library/Application\ Support/
     rm -rfi nvALT/
-    git clone git@github.com:bawigga/nvalt-prime.git nvALT
+    git clone https://github.com/bawigga/nvalt-prime.git nvALT
 
 No need to restart nvALT. The changes will be picked up the next time you switch notes.
 
