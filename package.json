@@ -1,0 +1,28 @@
+{
+  "name": "nvalt-prime",
+  "version": "0.0.1",
+  "description": "An nvALT Preview Theme on Steroids",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.4.3",
+    "gulp-jshint": "^1.9.2",
+    "gulp-ruby-sass": "^1.0.0-alpha.3"
+  },
+  "devDependencies": {
+    
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bawigga/nvalt-prime.git"
+  },
+  "author": "Brian Wigginton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bawigga/nvalt-prime/issues"
+  },
+  "homepage": "https://github.com/bawigga/nvalt-prime"
+}
