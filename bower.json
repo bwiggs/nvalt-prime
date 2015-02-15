@@ -1,0 +1,25 @@
+{
+  "name": "nvalt-prime",
+  "description": "An nvALT Preview Theme on Steroids",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bawigga/nvalt-prime",
+  "authors": [
+    "Brian Wigginton <brianwigginton@gmail.com>"
+  ],
+  "keywords": [
+    "nvalt"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.3.0",
+    "rivets": "~0.8.0"
+  }
+}
