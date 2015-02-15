@@ -1,0 +1,16 @@
+gtd {
+	
+    display: block;
+    
+    &.gtd-done {
+    	color: #aaa;
+	}
+
+	&.gtd-action {
+    	color: #a90329;
+	}
+
+	fa.gtd-done {
+    	color: #739e73;
+	}
+}

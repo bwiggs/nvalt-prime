@@ -1,2 +1,13 @@
-bower_components/
+#### joe made this: https://goel.io/joe
+
+#####=== Yeoman ===#####
+
 node_modules/
+bower_components/
+*.log
+
+#####=== Sass ===#####
+
+.sass-cache
+*.css.map
+
