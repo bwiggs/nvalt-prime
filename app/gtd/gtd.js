@@ -14,7 +14,7 @@
         // inbox
         .replace(/\[\](.+)\n/gi,  '<gtd class="gtd-inbox"><span class="fa fa-square-o"></span> $1</gtd>')
 
-    if(GTD_NOTES) {
+    if(!_.isUndefined(GTD_NOTES)) {
 
         $('gtd-notes').show();
 

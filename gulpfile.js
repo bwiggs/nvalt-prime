@@ -11,15 +11,27 @@ var csslibs = [
   BOWER_DIR + 'highlightjs/styles/github.css'
 ];
 
-var jslibs = [
+var scripts = [
+  BOWER_DIR + 'jquery/dist/jquery.min.js',
+  BOWER_DIR + 'lodash/lodash.min.js',
   BOWER_DIR + 'rivets/dist/rivets.bundled.min.js',
-  BOWER_DIR + 'highlightjs/highlight.pack.js'
+  BOWER_DIR + 'highlightjs/highlight.pack.js',
+  APP_DIR + '**/*.js'
 ];
 
-gulp.task('jslibs', function() {
+var fonts = [
+  BOWER_DIR + 'font-awesome/fonts/fontawesome.otf',
+  BOWER_DIR + 'font-awesome/fonts/fontawesome-webfont.eot',
+  BOWER_DIR + 'font-awesome/fonts/fontawesome-webfont.svg',
+  BOWER_DIR + 'font-awesome/fonts/fontawesome-webfont.ttf',
+  BOWER_DIR + 'font-awesome/fonts/fontawesome-webfont.woff',
+  BOWER_DIR + 'font-awesome/fonts/fontawesome-webfont.woff2'
+];
+
+gulp.task('scripts', function() {
   // console.log(jslibs)
-  return gulp.src(jslibs)
-    .pipe(concat('libs.js'))
+  return gulp.src(scripts)
+    .pipe(concat('app.js'))
     .pipe(gulp.dest('./dist/'));
 });
 
@@ -39,9 +51,19 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch(APP_DIR, ['sass']);
+gulp.task('fonts', function() {
+  gulp.src(fonts)
+    .pipe(gulp.dest('fonts'));
 });
 
-gulp.task('build', ['jslibs', 'csslibs', 'sass']);
+
+var buildTasks = ['scripts', 'csslibs', 'sass', 'fonts'];
+
+gulp.task('watch', function() {
+  gulp.watch(APP_DIR, buildTasks);
+  gulp.watch(APP_DIR + '**/*.js', ['scripts']);
+});
+
+gulp.task('build', buildTasks);
+
 gulp.task('default', ['build', 'watch']);
