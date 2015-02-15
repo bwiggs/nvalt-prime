@@ -25,13 +25,13 @@ In a terminal:
     rm -rfi nvALT/
     git clone https://github.com/bawigga/nvalt-prime.git nvALT
 
-No need to restart nvALT. The changes will be picked up the next time you switch notes.
+> No need to restart nvALT. The changes will be picked up the next time you switch notes. You can also right click on the preview window and click refresh.
 
 #### Reverting
 
 You can always restore the default just by deleting the files in `~/Library/Application Support/nvALT/`.
 
-	rm -rf ~/Library/Application\ Support/nvALT
+	rm -rfi ~/Library/Application\ Support/nvALT
 
 #### Hacking
 
@@ -41,8 +41,8 @@ Just point `~/Library/Application Support/nvALT` to your local git repository.
 	git clone git@github.com:bawigga/nvalt-prime.git
     rm -rfi ~/Library/Application\ Support/nvALT
 	ln -s /path/to/nvalt-prime/ ~/Library/Application\ Support/nvALT
-	
-Switching between notes will reload your changes.
+
+> No need to restart nvALT. The changes will be picked up the next time you switch notes. You can also right click on the preview window and click refresh.
 
 ## Usage
 
@@ -50,9 +50,9 @@ Switching between notes will reload your changes.
 
 There are two types of checkboxes you can use:
 
-    [] - unchecked
+    [ ] - unchecked
     [/] - checked
-    [] - checked @done
+    [ ] - checked @done
 
 ### Code Highlighting
 
