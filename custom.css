@@ -11,6 +11,16 @@ body {
     display: none;
 }
 
+title {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: #aaa;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
 notifications {
     display: block;
     background-color: #d6dde7;
