@@ -1,5 +1,7 @@
 # nvalt-prime
 
+[![Join the chat at https://gitter.im/bawigga/nvalt-prime](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bawigga/nvalt-prime?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A smart [nvalt](http://brettterpstra.com/projects/nvalt/) Preview Theme.
 
 ### Features
