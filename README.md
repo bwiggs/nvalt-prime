@@ -29,11 +29,20 @@ In a terminal:
 
 > No need to restart nvALT. The changes will be picked up the next time you switch notes. You can also right click on the preview window and click refresh.
 
+
+
 #### Reverting
 
 You can always restore the default just by deleting the files in `~/Library/Application Support/nvALT/`.
 
 	rm -rfi ~/Library/Application\ Support/nvALT
+
+#### Updating
+
+In a terminal:
+
+    cd ~/Library/Application\ Support/nvALT/
+    git pull
 
 #### Hacking
 
@@ -41,7 +50,7 @@ Just point `~/Library/Application Support/nvALT` to your local git repository.
 
 	cd [your project path]
 	git clone git@github.com:bawigga/nvalt-prime.git
-    rm -rfi ~/Library/Application\ Support/nvALT
+	rm -rfi ~/Library/Application\ Support/nvALT
 	ln -s /path/to/nvalt-prime/ ~/Library/Application\ Support/nvALT
 
 > No need to restart nvALT. The changes will be picked up the next time you switch notes. You can also right click on the preview window and click refresh.
@@ -70,9 +79,3 @@ There are two types of checkboxes you can use:
 ### Github Markdown Theme
 
     strikethrough: wrap text with ~~
-    
-### User Story Detection
-
-By writing your user stories in a particular format, nvALT will parse and display them.
-
-    "As a user, I expect" to be able to do something.
