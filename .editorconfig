@@ -1,0 +1,12 @@
+; Tab indentation (no size specified)
+[*.css]
+indent_size = 2
+indent_style = space
+
+[*.js]
+indent_size = 2
+indent_style = space
+
+[*.html]
+indent_size = 2
+indent_style = space
