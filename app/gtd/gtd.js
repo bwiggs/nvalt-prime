@@ -15,7 +15,7 @@
     // inbox
     .replace(/\[\](.+)\n/gi,  '<gtd class="gtd-inbox"><span class="fa fa-square-o"></span> $1</gtd>');
 
-  $('gtd-notes').show();
+  // $('gtd-notes').show();
 
   var tasks = [];
 

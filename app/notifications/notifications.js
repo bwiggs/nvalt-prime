@@ -1,7 +1,6 @@
 (function notifications(_, $, rivets) {
-
-    if(NOTIFICATIONS) {
-        $('notifications').removeClass('hidden');
-    }
+  'use strict';
+  
+  // $('notifications').removeClass('hidden');
 
 })(_, jQuery, rivets);
