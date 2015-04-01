@@ -57,6 +57,8 @@ Just point `~/Library/Application Support/nvALT` to your local git repository.
 
 ## Usage
 
+> Please share how/why you use nvALT! Submit a quick comment on [issue #14](https://github.com/bawigga/nvalt-prime/issues/14)
+
 ### Checkboxes
 
 There are two types of checkboxes you can use:
