@@ -56,7 +56,6 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest('fonts'));
 });
 
-
 var buildTasks = ['scripts', 'sass', 'csslibs', 'fonts'];
 
 gulp.task('watch', function() {
