@@ -44,5 +44,11 @@
         </div>
     </div>
     <script src="file://{%support%}/dist/app.js"></script>
+    <script>
+      window.onload = function(e){
+      var container = document.getElementById("wrapper");
+      container.innerHTML = container.innerHTML.replace(/\[\[(.*?)\]\]/g,"<a href='nvalt://find/$1'>$1</a>");
+      }
+    </script> 
 </body>
 </html>
