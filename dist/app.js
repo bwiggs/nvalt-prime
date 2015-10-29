@@ -121,13 +121,17 @@ return{aliases:["styl"],cI:!1,i:"("+l.join("|")+")",k:"if else for in",c:[e.QSM,
   body.innerHTML = body.innerHTML
     // action
     .replace(/\[\](.+)\s@action/gi, '<gtd class="gtd-action"><span class="fa fa-square-o"></span> $1</gtd>')
+    .replace(/\[ \](.+)\s@action/gi, '<gtd class="gtd-action"><span class="fa fa-square-o"></span> $1</gtd>')
     // later
     .replace(/\[\](.+)\s@later/gi, '<gtd class="gtd-later"><span class="fa fa-calendar"></span> $1</gtd>')
+    .replace(/\[ \](.+)\s@later/gi, '<gtd class="gtd-later"><span class="fa fa-calendar"></span> $1</gtd>')
     // done
     .replace(/\[\](.+)\s@done/gi, '<gtd class="gtd-done"><span class="fa fa-check-square"></span> <del>$1</del></gtd>')
+    .replace(/\[ \](.+)\s@done/gi, '<gtd class="gtd-done"><span class="fa fa-check-square"></span> <del>$1</del></gtd>')
     .replace(/\[[x\/]\](.+)\n/gi, '<gtd class="gtd-done"><span class="fa fa-check-square"></span> <del>$1</del></gtd>')
     // inbox
-    .replace(/\[\](.+)\n/gi,  '<gtd class="gtd-inbox"><span class="fa fa-square-o"></span> $1</gtd>');
+    .replace(/\[\](.+)\n/gi,  '<gtd class="gtd-inbox"><span class="fa fa-square-o"></span> $1</gtd>')
+    .replace(/\[ \](.+)\n/gi,  '<gtd class="gtd-inbox"><span class="fa fa-square-o"></span> $1</gtd>');
 
   // $('gtd-notes').show();
 
